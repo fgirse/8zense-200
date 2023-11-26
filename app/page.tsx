@@ -1,8 +1,8 @@
-import Card from "@/components/home/card";
+import Card from "components/home/card";
 import { DEPLOY_URL } from "@/lib/constants";
-import { Github, Twitter } from "@/components/shared/icons";
-import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
+import { Github, Twitter } from "components/shared/icons";
+import WebVitals from "components/home/web-vitals";
+import ComponentGrid from "components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 
@@ -37,19 +37,54 @@ export default async function Home() {
             Introducing Precedent
           </p>
         </a>
-        <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-stone-500 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-7xl md:leading-[5rem]"
+{/* ================================================== GRID ==================================================*/}
+
+<div className="grid grid-cols-12 grid-rows-9 gap-1">
+    <div className="col-span-6 row-span-4">
+
+    <h1
+          className="animate-fade-up uppercase text-left bg-gradient-to-br from-amber-500 to-stone-100 bg-clip-text font-display text-4xl font-black tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-8xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          Building blocks for your Next project
+          Timeless Design
         </h1>
-        <p
+    </div>
+    <div className="col-span-6 row-span-4 col-start-7">
+<p className="text-xs text-fuchsia-50 text-right">the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together.</p>
+
+    </div>
+    <div className="col-span-6 row-span-3 row-start-5">
+      <Image src="/images/sideboardobg.png" alt="Sideboard" width="500" height="300"/>
+    </div>
+    <div className="col-span-6 row-span-3 col-start-7 row-start-5"></div>
+    <div className="col-span-6 row-span-2 row-start-8">5</div>
+    <div className="col-span-6 row-span-2 col-start-7 row-start-8">6</div>
+</div>
+<div className="mb-5 flex flex-col items-center shadow-2xl">
+<p
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           An opinionated collection of components, hooks, and utilities for your
           Next.js project.
         </p>
+<Image src="/images/LogoEZ.png" alt="Sideboard" width="180" height="180"/>
+
+</div>
+    
+
+
+
+
+
+
+
+
+
+{/* ================================================== ENDE==================================================*/}
+
+       
+      
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
