@@ -24,13 +24,13 @@ export default function NavBar({ session }: { session: Session | null }) {
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
           <Link href="/" className="flex items-center font-display text-2xl">
             <Image
-              src="/logo.png"
-              alt="Precedent logo"
-              width="30"
-              height="30"
+              src="/images/LogoEZ.png"
+              alt="8zense.com  logo"
+              width="60"
+              height="60"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>Precedent</p>
+            <p className="  px-3 text-sm text-yellow-500" >8zense.com</p>
           </Link>
           <div>
             {session ? (

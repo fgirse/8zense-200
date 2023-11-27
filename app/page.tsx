@@ -108,7 +108,11 @@ export default async function Home() {
 </div>
 <div className="mb-5 flex flex-col items-center shadow-2xl">
 ^
-<Image src="/images/LogoEZ.png" alt="LogoEZ" width="180" height="180"/>
+<Image src="/images/LogoEZ.png" 
+alt="LogoEZ"
+ width="180" 
+ height="180"
+ className="mt-12 rounded-xl shadow-2xl"/>
 
 <div className="mt-24">
         <Gallery/>
@@ -129,7 +133,7 @@ export default async function Home() {
       
       
          </div>
-      <div className="m-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
+      <div className="mt-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo, large }) => (
           <Card
             key={title}
