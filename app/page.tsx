@@ -5,6 +5,7 @@ import WebVitals from "components/home/web-vitals";
 import ComponentGrid from "components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
+import Gallery from "@/components/home/Gallery"
 
 export default async function Home() {
   const { stargazers_count: stars } = await fetch(
@@ -25,6 +26,7 @@ export default async function Home() {
 
   return (
     <>
+{/* ===================================== SECTION A  ================================ */}
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
         <a
           href="https://twitter.com/steventey/status/1613928948915920896"
@@ -39,7 +41,7 @@ export default async function Home() {
         </a>
 {/* ================================================== GRID ==================================================*/}
 
-<div className="grid grid-cols-12 grid-rows-9 gap-1">
+<div className="grid grid-cols-12 grid-rows-9 gap-x-3">
     <div className="col-span-6 row-span-4">
 
     <h1
@@ -50,47 +52,18 @@ export default async function Home() {
         </h1>
     </div>
     <div className="col-span-6 row-span-4 col-start-7">
-<p className="text-xs text-fuchsia-50 text-right">the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together.</p>
+<div className="flex flex-col items-end"><p className="text-xs text-fuchsia-50 text-right">&laquo; the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together. &raquo;</p>
+<p className="text-white text-right text-xs bg-orange-500 rounded-full w-12 h-12    "><span className="text-[.7rem] flex flex-col items-center justtify-center text-center px-1 py-1">Gary < br/>Cooper</span></p></div>
 
     </div>
     <div className="col-span-6 row-span-3 row-start-5">
       <Image src="/images/sideboardobg.png" alt="Sideboard" width="500" height="300"/>
     </div>
     <div className="col-span-6 row-span-3 col-start-7 row-start-5"></div>
-    <div className="col-span-6 row-span-2 row-start-8">5</div>
-    <div className="col-span-6 row-span-2 col-start-7 row-start-8">6</div>
-</div>
-<div className="mb-5 flex flex-col items-center shadow-2xl">
-<p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 [text-wrap:balance] md:text-xl"
-          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-        >
-          An opinionated collection of components, hooks, and utilities for your
-          Next.js project.
-        </p>
-<Image src="/images/LogoEZ.png" alt="Sideboard" width="180" height="180"/>
-
-</div>
+    <div className="col-span-6 row-span-2 row-start-8">
     
-
-
-
-
-
-
-
-
-
-{/* ================================================== ENDE==================================================*/}
-
-       
-      
-        <div
-          className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
-          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
-        >
           <a
-            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
+            className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-xs text-white transition-colors hover:bg-white hover:text-black"
             href={DEPLOY_URL}
             target="_blank"
             rel="noopener noreferrer"
@@ -111,8 +84,15 @@ export default async function Home() {
             </svg>
             <p>Deploy to Vercel</p>
           </a>
+          
+        
+
+    </div>
+    <div className="col-span-6 row-span-2 col-start-7 row-start-8">
+    
+    
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-xs text-gray-600 shadow-md transition-colors hover:border-gray-800"
             href="https://github.com/steven-tey/precedent"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,9 +103,33 @@ export default async function Home() {
               <span className="font-semibold">{nFormatter(stars)}</span>
             </p>
           </a>
-        </div>
-      </div>
-      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
+        
+    </div>
+</div>
+<div className="mb-5 flex flex-col items-center shadow-2xl">
+^
+<Image src="/images/LogoEZ.png" alt="LogoEZ" width="180" height="180"/>
+
+<div className="mt-24">
+        <Gallery/>
+       </div>
+</div>
+    
+{/* ===================================== ENDE SECTION A  ================================ */}
+
+
+
+
+
+
+
+
+{/* ================================================== ENDE==================================================*/}
+
+      
+      
+         </div>
+      <div className="m-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo, large }) => (
           <Card
             key={title}

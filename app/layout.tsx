@@ -24,7 +24,7 @@ export default async function RootLayout({
     <ClerkProvider>
           <html lang="en">
       <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-800 via-slate-600 to--slate-''''''''''''" />
+        <div className="fixed h-screen w-full bg-gradient-to-br from-slate-800 via-slate-600 to--slate-''''''''''''" />
         <Suspense fallback="...">
           <NavBar session={null}/>
         </Suspense>
