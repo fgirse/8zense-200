@@ -27,7 +27,7 @@ export default async function Home() {
   return (
     <>
 {/* ===================================== SECTION A  ================================ */}
-      <div className="z-10 w-full max-w-xl px-5 xl:px-0">
+      <div className="z-10 w-full max-w-xl px-5 md:max-w-4xl xl:px-0">
         <a
           href="https://twitter.com/steventey/status/1613928948915920896"
           target="_blank"
@@ -42,7 +42,7 @@ export default async function Home() {
 {/* ================================================== GRID ==================================================*/}
 
 <div className="grid grid-cols-12 grid-rows-9 gap-x-3">
-    <div className="col-span-6 row-span-4">
+    <div className="col-span-6 row-span-4 md:col-span-7">
 
     <h1
           className="animate-fade-up uppercase text-left bg-gradient-to-br from-amber-500 to-stone-100 bg-clip-text font-display text-4xl font-black tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm [text-wrap:balance] md:text-8xl md:leading-[5rem]"
@@ -51,8 +51,8 @@ export default async function Home() {
           Timeless Design
         </h1>
     </div>
-    <div className="col-span-6 row-span-4 col-start-7">
-<div className="flex flex-col items-end"><p className="text-xs text-fuchsia-50 text-right">&laquo; the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together. &raquo;</p>
+    <div className="col-span-6 row-span-4 col-start-7 md:col-span-5">
+<div className="flex flex-col items-end"><p className="text-xs text-fuchsia-50 text-right md:text-2xl md:w-3/4">&laquo; the beauty of a living thing is not the atoms that go into it -but the way those atoms are put together. &raquo;</p>
 <p className="text-white text-right text-xs bg-orange-500 rounded-full w-12 h-12    "><span className="text-[.7rem] flex flex-col items-center justtify-center text-center px-1 py-1">Gary < br/>Cooper</span></p></div>
 
     </div>
@@ -107,7 +107,6 @@ export default async function Home() {
     </div>
 </div>
 <div className="mb-5 flex flex-col items-center shadow-2xl">
-^
 <Image src="/images/LogoEZ.png" 
 alt="LogoEZ"
  width="180" 

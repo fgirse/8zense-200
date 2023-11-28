@@ -1,5 +1,10 @@
-/** @type {import('tailwindcss').Config} */
+
 const plugin = require("tailwindcss/plugin");
+
+const { blackA, mauve, violet, indigo, purple } = require('@radix-ui/colors');
+
+/** @type {import('tailwindcss').Config} */
+
 
 module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
@@ -8,17 +13,34 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        ...blackA,
+        ...mauve,
+        ...violet,
+        ...purple,
+        ...indigo,
+      },
       fontFamily: {
         display: ["var(--font-sf)", "system-ui", "sans-serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
-        // Fade up and down
-        "fade-up": "fade-up 0.5s",
-        "fade-down": "fade-down 0.5s",
-        // Tooltip
-        "slide-up-fade": "slide-up-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
-        "slide-down-fade": "slide-down-fade 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+        scaleIn: 'scaleIn 200ms ease',
+        scaleOut: 'scaleOut 200ms ease',
+        fadeIn: 'fadeIn 200ms ease',
+        fadeOut: 'fadeOut 200ms ease',
+        enterFromLeft: 'enterFromLeft 250ms ease',
+        enterFromRight: 'enterFromRight 250ms ease',
+        exitToLeft: 'exitToLeft 250ms ease',
+        exitToRight: 'exitToRight 250ms ease',
+        scaleIn: 'scaleIn 200ms ease',
+        scaleOut: 'scaleOut 200ms ease',
+        fadeIn: 'fadeIn 200ms ease',
+        fadeOut: 'fadeOut 200ms ease',
+        enterFromLeft: 'enterFromLeft 250ms ease',
+        enterFromRight: 'enterFromRight 250ms ease',
+        exitToLeft: 'exitToLeft 250ms ease',
+        exitToRight: 'exitToRight 250ms ease',
       },
       keyframes: {
         // Fade up and down
@@ -48,6 +70,8 @@ module.exports = {
             transform: "translateY(0px)",
           },
         },
+
+
         // Tooltip
         "slide-up-fade": {
           "0%": { opacity: 0, transform: "translateY(6px)" },
@@ -57,6 +81,11 @@ module.exports = {
           "0%": { opacity: 0, transform: "translateY(-6px)" },
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
+
+
+
+
+        
       },
     },
   },
@@ -67,5 +96,21 @@ module.exports = {
       addVariant("radix-side-top", '&[data-side="top"]');
       addVariant("radix-side-bottom", '&[data-side="bottom"]');
     }),
+    plugin(({ matchUtilities }) => {
+      matchUtilities({
+        perspective: (value) => ({
+          perspective: value,
+        }),
+      });
+    }),
+    plugin(({ matchUtilities }) => {
+      matchUtilities({
+        perspective: (value) => ({
+          perspective: value,
+        }),
+      });
+    }),
   ],
 };
+
+              
