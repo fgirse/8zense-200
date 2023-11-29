@@ -8,8 +8,8 @@
     "path": false
   },
   "scripts": {
-    "dev": "prisma generate && next dev --turbo",
-    "build": "prisma generate && prisma db push && next build",
+    "dev": "next dev --turbo",
+    "build": " next build",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "start": "next start",
