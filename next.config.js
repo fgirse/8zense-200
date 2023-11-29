@@ -12,8 +12,14 @@ const nextConfig = {
         destination: "https://github.com/steven-tey/precedent",
         permanent: false,
       },
+      
     ];
   },
-};
-
+  webpack: (config, {isServer}) => {
+    if (!isServer) {
+      config.node = {
+        fs: 'empty',
+      };
+};}
+}
 module.exports = nextConfig;

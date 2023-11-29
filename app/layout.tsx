@@ -1,14 +1,9 @@
 import React from "react";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import cx from "classnames";
-import { sfPro, inter } from "./fonts";
-//import Nav from "@/components/layout/nav";
-import Footer from "components/layout/footer";
-import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
-import NavigationBar  from "@/components/layout/NavigationMenu";
+";
 
-export const metadata = {                                                        
+expor00t const metadata = {                                                        
   title: "Precedent - Building blocks for your Next.js project",
   description:
     "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
