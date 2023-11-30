@@ -1,12 +1,12 @@
 import React from "react";
+import Menubar from "@/components/layout/NavigationMenu"
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
 import { sfPro, inter } from "./fonts";
-//import Nav from "@/components/layout/nav";
-import Footer from "components/layout/footer";
-import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
-import { Menubar }  from "@/app/(components)/Menubar";
+import SessionProvider from "@/app/utils/SessionProvider";
+import Footer from "@/components/layout/footer"   
+import NavigationMenu from "@/components/layout/Navbar";
 
 export const metadata = {                                                        
   title: "Precedent - Building blocks for your Next.js project",
@@ -22,24 +22,28 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    
           <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className ="fixed h-screen w-full bg-gradient-to-br from-slate-800 via-slate-700 to-gray-800" />
-        <ClerkLoading >
-          <div className="mt-32 flex flex-col items-center justify-center text-center bg-red-600 text-xl text-white">
-            Loading....
-          </div>
-          <Menubar/>
-          </ClerkLoading>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
-          {children}
-        </main>
-        <Footer />
-        <Analytics />
-      </body>
-    </html>
-    </ClerkProvider>
+
+      
+             <SessionProvider>
+             <body className={cx(sfPro.variable, inter.variable)}>
+               <div className ="fixed h-screen w-full bg-gradient-to-br from-slate-800 via-slate-700 to-gray-800" />
+             
+                
+                 <Menubar/>
+             
+               <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
+                 {children}
+               </main>
+               <Footer />
+               <Analytics />
+               </body>
+               </SessionProvider>
+
+</html>
+  
+  
 
   );
 }

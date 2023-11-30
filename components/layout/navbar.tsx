@@ -1,51 +1,50 @@
 "use client";
-
-import Image from "next/image";
+import React from "react";
 import Link from "next/link";
-import useScroll from "@/lib/hooks/use-scroll";
-import { useSignInModal } from "./sign-in-modal";
-import UserDropdown from "./user-dropdown";
-import { Session } from "next-auth";
+import { signOut, useSession } from "next-auth/react";
 
-export default function NavBar({ session }: { session: Session | null }) {
-  const { SignInModal, setShowSignInModal } = useSignInModal();
-  const scrolled = useScroll(50);
-
+const Navbar = () => {
+  const { data: session }: any = useSession();
   return (
-    <>
-      <SignInModal />
-      <div
-        className={`fixed top-0 w-full flex justify-center ${
-          scrolled
-            ? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
-            : "bg-white/0"
-        } z-30 transition-all`}
-      >
-        <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between w-full">
-          <Link href="/" className="flex items-center font-display text-2xl">
-            <Image
-              src="/images/LogoEZ.png"
-              alt="8zense.com  logo"
-              width="60"
-              height="60"
-              className="mr-2 rounded-sm"
-            ></Image>
-            <p className="  px-3 text-sm text-yellow-500" >8zense.com</p>
+    <div>
+      <ul className="flex justify-between m-10 item-center">
+        <div>
+          <Link href="/">
+            <li>Home</li>
           </Link>
-          <div>
-            {session ? (
-              <UserDropdown session={session} />
-            ) : (
-              <button
-                className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-                onClick={() => setShowSignInModal(true)}
-              >
-                Sign In
-              </button>
-            )}
-          </div>
         </div>
-      </div>
-    </>
+        <div className="flex gap-10">
+          <Link href="/dashboard">
+            <li>Dashboard</li>
+          </Link>
+          {!session ? (
+            <>
+              <Link href="/login">
+                <li>Login</li>
+              </Link>
+              <Link href="/register">
+                <li>Register</li>
+              </Link>
+            </>
+          ) : (
+            <>
+              {session.user?.email}
+              <li>
+                <button
+                  onClick={() => {
+                    signOut();
+                  }}
+                  className="p-2 px-5 -mt-1 bg-blue-800 rounded-full"
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
+        </div>
+      </ul>
+    </div>
   );
-}
+};
+
+export default Navbar;
