@@ -4,7 +4,7 @@ import { Github, Twitter } from "components/shared/icons";
 import WebVitals from "components/home/web-vitals";
 import ComponentGrid from "components/home/component-grid";
 import Image from "next/image";
-import { nFormatter } from "@/lib/utils";
+//import { nFormatter } from "@/lib/utils";
 import Gallery from "@/components/home/Gallery"
 
 export default async function Home() {
@@ -100,7 +100,7 @@ export default async function Home() {
             <Github />
             <p>
               <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
+              
             </p>
           </a>
         

@@ -6,7 +6,7 @@ import { sfPro, inter } from "./fonts";
 //import Nav from "@/components/layout/nav";
 import Footer from "components/layout/footer";
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
-import NavigationBar  from "@/app/(components)/Menubar";
+import { Menubar }  from "@/app/(components)/Menubar";
 
 export const metadata = {                                                        
   title: "Precedent - Building blocks for your Next.js project",
@@ -27,10 +27,10 @@ export default async function RootLayout({
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className ="fixed h-screen w-full bg-gradient-to-br from-slate-800 via-slate-700 to-gray-800" />
         <ClerkLoading >
-          <div className="mt-32 flex flex-col items-center justify-center text-center text-xl text-red-300">
+          <div className="mt-32 flex flex-col items-center justify-center text-center bg-red-600 text-xl text-white">
             Loading....
           </div>
-          <NavigationBar/>
+          <Menubar/>
           </ClerkLoading>
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
           {children}
